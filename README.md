@@ -2,6 +2,6 @@
 
 ## Other repositories
 
-* [lego-train-server]()
+* [lego-train-server](https://github.com/eguahlak/lego-train-server)
 
 

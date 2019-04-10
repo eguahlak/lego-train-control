@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
         socket_experiment_button.setOnClickListener {
             startActivity(Intent(this, SocketExperimentActivity::class.java))
             }
+        trainButton.setOnClickListener {
+            startActivity(Intent(this, TrainGui::class.java))
+            }
         }
 
     }

@@ -17,7 +17,7 @@ class SocketExperimentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_socket_experiment)
-        TrainConnectTask(this).executeOnExecutor(THREAD_POOL_EXECUTOR, TrainConfig("172.20.10.2", 4711, 17))
+        TrainConnectTask(this).executeOnExecutor(THREAD_POOL_EXECUTOR, TrainConfig("10.50.130.30", 4711, 17))
         listenButton.setOnClickListener {
             TrainInputTask(this).executeOnExecutor(THREAD_POOL_EXECUTOR, trainSocket)
             }

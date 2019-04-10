@@ -26,5 +26,14 @@
             android:id="@+id/socket_experiment_button"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/textView2"/>
+    <Button
+            android:text="TRAIN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trainButton" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="357dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="326dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="161dp" android:layout_marginEnd="162dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

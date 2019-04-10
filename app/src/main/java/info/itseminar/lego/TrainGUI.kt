@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import info.itseminar.lego.protocol.Command
+import info.itseminar.lego.protocol.TrainConfig
 import kotlinx.android.synthetic.main.activity_socket_experiment.*
 import kotlinx.android.synthetic.main.activity_traingui.*
 import java.io.IOException
@@ -12,6 +13,7 @@ import java.net.Socket
 
 class TrainGui : AppCompatActivity() {
     var trainSocket: Socket? = null
+    var speed = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +23,7 @@ class TrainGui : AppCompatActivity() {
         speedUpButton.setOnClickListener {
             if (trainSocket == null) toast("Socket not initialized!")
             val increase = 5
-            increase += speed
+            speed += increase
             toast("setting speed to $speed")
             val command = Command.TrainControl(speed)
             TrainGui.TrainControlTask(this)

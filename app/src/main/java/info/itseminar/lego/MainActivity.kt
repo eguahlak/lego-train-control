@@ -11,11 +11,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         socket_experiment_button.setOnClickListener {
-            startActivity(Intent(this, SocketExperimentActivity::class.java))
+            val host = host_input.text.toString()
+            val intent = Intent(this, SocketExperimentActivity::class.java)
+            intent.putExtra("host", host)
+            startActivity(intent)
             }
-        trainButton.setOnClickListener {
+        /*trainButton.setOnClickListener {
             startActivity(Intent(this, TrainGui::class.java))
             }
+*/
         }
 
     }

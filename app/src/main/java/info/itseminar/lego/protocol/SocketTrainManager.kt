@@ -12,7 +12,6 @@ class SocketTrainManager() : TrainManager {
   override fun connect(config: TrainConfig, handle: (Boolean) -> Unit) {
     Log.d("TRAIN", "Connecting")
     ConnectTask(this, handle).executeOnExecutor(THREAD_POOL_EXECUTOR, config)
-    //send(Command.Connect(config.trainId))
     }
 
   override fun setOnInformation(handle: (Command) -> Unit) {

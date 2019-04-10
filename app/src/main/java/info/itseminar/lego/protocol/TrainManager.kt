@@ -1,20 +1,10 @@
 package info.itseminar.lego.protocol
 
 interface TrainManager {
-    fun setOnInformation(code: TrainManager.(Command) -> Unit = { })
-    fun send(command: Command)
-    }
+  fun connect(config: TrainConfig, handle: (Boolean) -> Unit = { })
+  fun setOnInformation(handle: (Command) -> Unit = { })
+  fun send(command: Command, handle: (String) -> Unit = { })
+  }
 
-class SocketTrainManager(trainId: Int) : TrainManager {
-    override fun setOnInformation(code: TrainManager.(Command) -> Unit) {
-        TODO("not implemented")
-        }
-
-    override fun send(command: Command) {
-        TODO("not implemented")
-        }
-
-    }
-
-fun trainManager(trainId: Int) = SocketTrainManager(trainId)
+class TrainConfig(val host: String, val port: Int, val trainId: Int)
 

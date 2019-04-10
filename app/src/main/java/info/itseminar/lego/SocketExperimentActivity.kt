@@ -1,39 +1,52 @@
 package info.itseminar.lego
 
-import android.os.AsyncTask
-import android.os.AsyncTask.THREAD_POOL_EXECUTOR
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import info.itseminar.lego.protocol.Command
+import info.itseminar.lego.protocol.TrainConfig
+import info.itseminar.lego.protocol.trainManager
 import kotlinx.android.synthetic.main.activity_socket_experiment.*
-import java.io.IOException
-import java.net.Socket
 
 class SocketExperimentActivity : AppCompatActivity() {
-    var trainSocket: Socket? = null
-    var informationCount = 0
+  var informationCount = 0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_socket_experiment)
-        TrainConnectTask(this).executeOnExecutor(THREAD_POOL_EXECUTOR, TrainConfig("172.20.10.2", 4711, 17))
-        listenButton.setOnClickListener {
-            TrainInputTask(this).executeOnExecutor(THREAD_POOL_EXECUTOR, trainSocket)
-            }
-        speedButton.setOnClickListener {
-            if (trainSocket == null) toast("Socket not initialized!")
-            val speed = targetSpeedText.text.toString().toIntOrNull() ?: 123
-            toast("setting speed to $speed")
-            val command = Command.TrainControl(speed)
-            TrainControlTask(this).executeOnExecutor(THREAD_POOL_EXECUTOR, trainSocket!! to command)
-            }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_socket_experiment)
+
+    trainManager().connect(TrainConfig("172.20.10.2", 4711, 17)) {
+      if (it) {
+        speedButton.setText("Set Target Speed")
         }
-
-    override fun onDestroy() {
-        super.onDestroy()
+      else {
+        speedButton.setText("Connection failed")
         }
+      }
+    listenButton.setOnClickListener {
+      trainManager().setOnInformation { command ->
+        when (command) {
+          is Command.TrainInformation -> {
+            speed_label.setText("${command.speed} km/h")
+            }
+          else -> {
+            Log.w("TRAIN", "Unknown command: $command")
+            }
+          }
+        }
+      }
+    speedButton.setOnClickListener {
+      trainManager().send(Command.TrainControl(targetSpeedText.text.toString().toIntOrNull() ?: 0))
+      }
+    }
 
+  override fun onDestroy() {
+    super.onDestroy()
+    }
+
+  }
+
+/*
     class TrainConnectTask(val activity: SocketExperimentActivity) : AsyncTask<TrainConfig, Void, Socket?>() {
         override fun doInBackground(vararg configs: TrainConfig): Socket? {
             if (configs.size == 0) return null
@@ -115,5 +128,4 @@ class SocketExperimentActivity : AppCompatActivity() {
         }
 
     }
-
-class TrainConfig(val host: String, val port: Int, val trainId: Int)
+*/

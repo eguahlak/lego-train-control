@@ -1,6 +1,5 @@
 package info.itseminar.lego
 
-import android.os.AsyncTask.THREAD_POOL_EXECUTOR
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -10,16 +9,14 @@ import info.itseminar.lego.protocol.trainManager
 import kotlinx.android.synthetic.main.activity_socket_experiment.*
 
 class SocketExperimentActivity : AppCompatActivity() {
-  var informationCount = 0
-
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_socket_experiment)
     val host = intent.extras.getString("host").trim()
 
-    trainManager().connect(TrainConfig(host, 4711, 17)) {
-      if (it) {
+    trainManager().connect(TrainConfig(host, 4711, 17)) { success ->
+      if (success) {
         speedButton.setText("Set Target Speed")
         }
       else {

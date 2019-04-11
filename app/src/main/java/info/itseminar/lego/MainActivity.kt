@@ -16,10 +16,10 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("host", host)
             startActivity(intent)
             }
-        /*trainButton.setOnClickListener {
+        trainButton.setOnClickListener {
             startActivity(Intent(this, TrainGui::class.java))
             }
-*/
+
         }
 
     }

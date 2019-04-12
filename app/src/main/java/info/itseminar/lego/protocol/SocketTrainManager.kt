@@ -16,7 +16,7 @@ class SocketTrainManager() : TrainManager {
 
   override fun setOnInformation(handle: (Command) -> Unit) {
     ReceiveTask(this, handle).executeOnExecutor(THREAD_POOL_EXECUTOR)
-    }
+  }
 
   override fun send(command: Command, handle: (String) -> Unit) {
     SendTask(this, handle).executeOnExecutor(THREAD_POOL_EXECUTOR, command)

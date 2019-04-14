@@ -17,7 +17,7 @@
             app:layout_constraintEnd_toEndOf="@+id/targetSpeedText"
             app:layout_constraintVertical_chainStyle="packed" android:layout_marginTop="32dp"/>
     <Button
-            android:text="Wait"
+            android:text="Set Speed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/speedButton"
@@ -35,10 +35,10 @@
             app:layout_constraintBottom_toTopOf="@+id/speedButton" app:layout_constraintStart_toStartOf="@+id/speedButton"
             app:layout_constraintEnd_toEndOf="@+id/speedButton"/>
     <Button
-            android:text="Listen"
+            android:text="Emergency Brake"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/listenButton"
+            android:id="@+id/brakeButton"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.501"

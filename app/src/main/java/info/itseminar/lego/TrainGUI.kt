@@ -17,15 +17,21 @@ class TrainGui : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_traingui)
-    var speedometer: SpeedView = speedView
-    speedometer.setWithTremble(false)
-    traffic.
+
+    // AKA: renamed android:id in xml-file
+    // var speedometer: SpeedView = speedView
+
+    // AKA: use property syntax when possible
+    speedometer.isWithTremble = false
+    //traffic.
 
 
     speedUpButton.setOnClickListener {
       val increase = 5
       targetspeed += increase
-      trainManager().send(Command.TrainControl(targetspeed.toString().toIntOrNull() ?: 0))
+      // AKA: no need to convert an interger to string and back again ;-)
+      // trainManager().send(Command.TrainControl(targetspeed.toString().toIntOrNull() ?: 0))
+      trainManager().send(Command.TrainControl(targetspeed))
       currentSpeedLabel.setText("${targetspeed} km/h")
     }
     speedDownButton.setOnClickListener {

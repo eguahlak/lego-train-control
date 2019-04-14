@@ -16,7 +16,7 @@
     <com.github.anastr.speedviewlib.SpeedView
 
 
-            android:id="@+id/speedView"
+            android:id="@+id/speedometer"
 
 
             android:layout_width="250dp"

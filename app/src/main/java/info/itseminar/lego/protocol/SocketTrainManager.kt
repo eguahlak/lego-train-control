@@ -8,15 +8,26 @@ import java.net.Socket
 
 class SocketTrainManager() : TrainManager {
   var socket: Socket? = null
+  override var train: Train? = null
 
+  val connected: Boolean
+    get() = train != null
+
+  @Deprecated("Since 2019-06-14", replaceWith = ReplaceWith("connectAndListen"))
   override fun connect(config: TrainConfig, handle: (Boolean) -> Unit) {
     Log.d("TRAIN", "Connecting")
     ConnectTask(this, handle).executeOnExecutor(THREAD_POOL_EXECUTOR, config)
     }
 
+  override fun connectAndListen(server: TrainServer, listener: (Command) -> Unit) {
+    Log.d("TRAIN", "Connecting and listening")
+    ConnectAndReceiveTask(this, listener).executeOnExecutor(THREAD_POOL_EXECUTOR, server)
+    }
+
+  @Deprecated("Since 2019-06-14", replaceWith = ReplaceWith("connectAndListen"))
   override fun setOnInformation(handle: (Command) -> Unit) {
     ReceiveTask(this, handle).executeOnExecutor(THREAD_POOL_EXECUTOR)
-  }
+    }
 
   override fun send(command: Command, handle: (String) -> Unit) {
     SendTask(this, handle).executeOnExecutor(THREAD_POOL_EXECUTOR, command)
@@ -74,7 +85,7 @@ class SocketTrainManager() : TrainManager {
 
     }
 
-  class ReceiveTask(val manager: SocketTrainManager, val handle: (Command) -> Unit) : AsyncTask<Void, Command, Boolean>() {
+  class ReceiveTask(val manager: SocketTrainManager, val listener: (Command) -> Unit) : AsyncTask<Void, Command, Boolean>() {
 
     override fun doInBackground(vararg nothing: Void?): Boolean {
       Log.d("TRAIN", "Receive task started")
@@ -99,11 +110,47 @@ class SocketTrainManager() : TrainManager {
       }
 
     override fun onProgressUpdate(vararg commands: Command) {
-      for (command in commands) handle(command)
+      for (command in commands) listener(command)
       }
 
     }
 
+
+  class ConnectAndReceiveTask(val manager: SocketTrainManager, val handle: (Command) -> Unit) : AsyncTask<TrainServer, Command, Boolean>() {
+
+    override fun doInBackground(vararg servers: TrainServer): Boolean {
+      Log.d("TRAIN", "Connect and Receive task started")
+      for (server in servers) {
+        Log.d("TRAIN", "Trying to connect to $server")
+        try {
+          val socket = Socket(server.host, server.port)
+          manager.socket = socket
+          Log.d("TRAIN", "Connected to $server, starts listening")
+          val input = socket.getInputStream()
+          while (input != null) {
+            val command = Command.from(input)
+            // Log.d("TRAIN", "Received $command")
+            if (command is Command.Nothing) {
+              Log.d("TRAIN", "Nothing received, disconnecting...")
+              return true
+              }
+            publishProgress(command)
+            }
+          return true
+          }
+        catch (e: Exception) {
+          Log.e("TRAIN", "Can't connect to ${server.host} on ${server.port}")
+          return false
+          }
+        }
+      return true
+      }
+
+    override fun onProgressUpdate(vararg commands: Command) {
+      for (command in commands) handle(command)
+      }
+
+    }
 
   }
 

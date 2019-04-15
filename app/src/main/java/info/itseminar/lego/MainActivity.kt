@@ -17,7 +17,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             }
         trainButton.setOnClickListener {
-            startActivity(Intent(this, TrainGui::class.java))
+            val host = host_input.text.toString()
+            val intent = Intent(this, TrainGui::class.java)
+            intent.putExtra("host", host)
+            startActivity(intent)
             }
 
         }

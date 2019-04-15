@@ -35,7 +35,7 @@
             android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:hint="IP address of server"
-            android:textAlignment="center" android:text="10.50.130.119"/>
+            android:textAlignment="center" android:text="10.50.130.2"/>
     <Button
             android:text="Train"
             android:layout_width="115dp"

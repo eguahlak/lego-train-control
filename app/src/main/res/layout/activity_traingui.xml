@@ -51,15 +51,6 @@
             android:id="@+id/speedDownButton"
             app:layout_constraintStart_toEndOf="@+id/stopButton" app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@+id/stopButton"/>
-    <Button
-            android:text="LISTEN"
-            android:layout_width="94dp"
-            android:layout_height="56dp"
-            android:id="@+id/listenAgainButton" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/stopButton" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"/>
     <TextView
             android:text="Target Speed"
             android:layout_width="210dp"
@@ -70,4 +61,33 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintVertical_bias="0.899"/>
+    <TextView
+            android:text="Driver ID"
+            android:layout_width="140dp"
+            android:layout_height="56dp"
+            android:id="@+id/driver_id_text" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/stopButton" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:textSize="25sp" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.115"/>
+    <TextView
+            android:text="Next Light"
+            android:layout_width="67dp"
+            android:layout_height="39dp"
+            android:id="@+id/distance_to_light" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/traffic" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.984"
+            app:layout_constraintVertical_bias="0.013" android:textSize="15sp"/>
+    <TextView
+            android:text="current track"
+            android:layout_width="97dp"
+            android:layout_height="42dp"
+            android:id="@+id/track_id" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/driver_id_text" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:textSize="16sp"/>
 </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import info.itseminar.lego.protocol.*
 import kotlinx.android.synthetic.main.activity_socket_experiment.*
+import kotlinx.android.synthetic.main.activity_traingui.*
 
 class SocketExperimentActivity : AppCompatActivity() {
 
@@ -23,6 +24,7 @@ class SocketExperimentActivity : AppCompatActivity() {
         else -> {
           Log.w("TRAIN", "Unknown command: $command")
           }
+
         }
       }
 
@@ -54,5 +56,4 @@ class SocketExperimentActivity : AppCompatActivity() {
         create().show()
         }
       }
-
   }

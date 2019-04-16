@@ -5,14 +5,14 @@
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent">
     <ImageView
-            android:layout_width="67dp"
-            android:layout_height="147dp"
+            android:layout_width="119dp"
+            android:layout_height="198dp"
             app:srcCompat="@drawable/ic_traffic_light"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/currentSpeedLabel" app:layout_constraintHorizontal_bias="0.975"
-            app:layout_constraintVertical_bias="0.0" android:id="@+id/traffic"/>
+            app:layout_constraintBottom_toTopOf="@+id/currentSpeedLabel" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="0.313" android:id="@+id/traffic"/>
     <com.github.anastr.speedviewlib.SpeedView
 
 
@@ -26,7 +26,8 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/currentSpeedLabel" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintVertical_bias="0.38"/>
 
     <Button
             android:text="UP"
@@ -63,8 +64,8 @@
             app:layout_constraintVertical_bias="0.899"/>
     <TextView
             android:text="Driver ID"
-            android:layout_width="140dp"
-            android:layout_height="56dp"
+            android:layout_width="173dp"
+            android:layout_height="77dp"
             android:id="@+id/driver_id_text" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/stopButton" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -73,21 +74,22 @@
             app:layout_constraintVertical_bias="0.115"/>
     <TextView
             android:text="Next Light"
-            android:layout_width="67dp"
-            android:layout_height="39dp"
+            android:layout_width="157dp"
+            android:layout_height="60dp"
             android:id="@+id/distance_to_light" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/traffic" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.984"
-            app:layout_constraintVertical_bias="0.013" android:textSize="15sp"/>
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintVertical_bias="0.946" android:textSize="20sp"/>
     <TextView
             android:text="current track"
-            android:layout_width="97dp"
-            android:layout_height="42dp"
+            android:layout_width="129dp"
+            android:layout_height="67dp"
             android:id="@+id/track_id" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/driver_id_text" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:textSize="16sp"/>
+            android:layout_marginStart="8dp" android:textSize="20sp" app:layout_constraintHorizontal_bias="0.109"
+            app:layout_constraintVertical_bias="0.788"/>
 </android.support.constraint.ConstraintLayout>

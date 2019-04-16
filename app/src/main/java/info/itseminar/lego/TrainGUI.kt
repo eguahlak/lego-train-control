@@ -17,29 +17,26 @@ import info.itseminar.lego.protocol.TrainServer
 
 class TrainGui : AppCompatActivity() {
 
-  // var speed = 0
   var targetspeed = 0
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_traingui)
     val host = intent.extras.getString("host").trim()
-
-    // AKA: use property syntax when possible
+    speedometer.setMinMaxSpeed(0F, 300F)
     speedometer.isWithTremble = false
-    //traffic.
-    val wrapper = ContextThemeWrapper(this, R.style.BBB)
-    changeTheme(wrapper.getTheme())
+
+    //val wrapper = ContextThemeWrapper(this, R.style.BBB)
+    //changeTheme(wrapper.getTheme())
 
     trainManager().connectAndListen(TrainServer(host)) { command ->
       when (command) {
         is Command.TrainInformation -> {
           currentSpeedLabel.setText("${command.speed} km/h")
           speedometer.speedTo(command.speed.toFloat(), 1000)
-          distance_to_light.setText("${command.distanceToLight} light years")
-          track_id.setText("${command.trackId} trackID")
+          distance_to_light.setText("Distance to next light: ${command.distanceToLight}")
+          track_id.setText("Train running on track: ${command.trackId}")
           changeLight("${command.light}")
-          //println(command.distanceToLight)
         }
         is Command.TrainList -> if (trainManager().train == null) showTrainListDialog(command.trains)
         else -> {
@@ -89,7 +86,7 @@ class TrainGui : AppCompatActivity() {
         setItems(trainTexts) { dialog, index ->
           val train = trainArray[index]
           if (train.driver.id == 0) connect(train)
-          driver_id_text.setText("${train.id} has connected")
+          driver_id_text.setText("You control train number: ${train.id}")
         }
         create().show()
       }

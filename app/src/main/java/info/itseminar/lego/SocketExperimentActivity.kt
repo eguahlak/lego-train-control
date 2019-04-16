@@ -18,7 +18,7 @@ class SocketExperimentActivity : AppCompatActivity() {
     trainManager().connectAndListen(TrainServer(host)) { command ->
       when (command) {
         is Command.TrainInformation -> {
-          speed_label.setText("${command.speed} km/h")
+          speed_label.setText("${command.speed} km/h (${command.distanceToLight}/${command.light})")
           }
         is Command.TrainList -> if (trainManager().train == null) showTrainListDialog(command.trains)
         else -> {

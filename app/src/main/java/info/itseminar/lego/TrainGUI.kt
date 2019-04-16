@@ -96,7 +96,6 @@ class TrainGui : AppCompatActivity() {
     }
 
   fun changeLight(light: String) {
-    val drawable = ResourcesCompat.getDrawable(resources, R.drawable.ic_traffic_light, theme)
     val BBR = ContextThemeWrapper(this, R.style.BBR)
     val BGR = ContextThemeWrapper(this, R.style.BGR)
     val GGB = ContextThemeWrapper(this, R.style.GGB)

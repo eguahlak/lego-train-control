@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LightSignal">
+        <attr name="bauble_round" format="color" />
+        <attr name="bauble_small" format="color" />
+        <attr name="bauble_square" format="color" />
+    </declare-styleable>
+</resources>

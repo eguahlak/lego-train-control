@@ -8,18 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-        <style name="BaubleRound">
-            <item name="bauble_round">#2E8B57</item>
-        </style>
+    <style name="BaubleRound">
+        <item name="bauble_round">#2E8B57</item>
+    </style>
 
-        <style name="BaubleSmall">
-            <item name="bauble_small">#f22424</item>
-        </style>
-        <style name="BBB">
-            <item name="bauble_round">#000000</item>
-            <item name="bauble_small">#000000</item>
-            <item name="bauble_square">#000000</item>
-        </style>
+    <style name="BaubleSmall">
+        <item name="bauble_small">#f22424</item>
+    </style>
+    <style name="BBB">
+        <item name="bauble_round">#000000</item>
+        <item name="bauble_small">#000000</item>
+        <item name="bauble_square">#000000</item>
+    </style>
 
     <style name="GGR">
         <item name="bauble_round">#2E8B57</item>
@@ -59,4 +59,4 @@
     </style>
 
 
-    </resources>
+</resources>

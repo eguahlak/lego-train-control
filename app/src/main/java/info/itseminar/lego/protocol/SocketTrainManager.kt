@@ -154,9 +154,3 @@ class SocketTrainManager() : TrainManager {
 
   }
 
-fun Context.trainManager(init: TrainManager.() -> Unit = { }): TrainManager {
-  val application = this.applicationContext as TrainApplication
-  val manager = application.trainManager
-  manager.init()
-  return manager
-  }

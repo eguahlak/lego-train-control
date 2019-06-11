@@ -6,40 +6,40 @@
     <path android:fillColor="#ffffff"
         android:pathData="M100,80m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/ONE"
         android:pathData="M100,80m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/TWO"
         android:pathData="M120,44m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/THREE"
         android:pathData="M160,26m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/FOUR"
         android:pathData="M205,20m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/FIVE"
         android:pathData="M250,29m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/SIX"
         android:pathData="M290,50m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/SEVEN"
         android:pathData="M300,80m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/EIGHT"
         android:pathData="M290,110m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/NINE"
         android:pathData="M250,130m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/TEN"
         android:pathData="M205,140m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/ELEVEN"
         android:pathData="M160,135m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
-    <path android:fillColor="#ffffff"
+    <path android:fillColor="?attr/TWELVE"
         android:pathData="M120,115m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
         android:strokeColor="#000000" android:strokeWidth="3"/>
 </vector>

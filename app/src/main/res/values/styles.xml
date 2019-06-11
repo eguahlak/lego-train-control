@@ -57,6 +57,176 @@
         <item name="bauble_small">#2E8B57</item>
         <item name="bauble_square">#000000</item>
     </style>
+    <style name="T1">
+        <item name="ONE">#2E8B57</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#FFFFFF</item>
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+
+    <style name="T2">
+    <item name="ONE">#FFFFFF</item>
+    <item name="TWO">#2E8B57</item>
+    <item name="THREE">#FFFFFF</item>
+    <item name="FOUR">#FFFFFF</item>
+    <item name="FIVE">#FFFFFF</item>
+    <item name="SIX">#FFFFFF</item>
+    <item name="SEVEN">#FFFFFF</item>
+    <item name="EIGHT">#FFFFFF</item>
+    <item name="NINE">#FFFFFF</item>
+    <item name="TEN">#FFFFFF</item>
+    <item name="ELEVEN">#FFFFFF</item>
+    <item name="TWELVE">#FFFFFF</item>
+</style>
+
+    <style name="T3">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#2E8B57</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#FFFFFF</item>
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+    <style name="T4">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#2E8B57</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#FFFFFF</item>
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+    <style name="T5">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#2E8B57</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#FFFFFF</item>
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+    <style name="T6">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#2E8B57</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#FFFFFF</item>
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+    <style name="T7">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#2E8B57</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#FFFFFF</item>
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+    <style name="T8">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#2E8B57</item>
+        <item name="NINE">#FFFFFF</item>
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+    <style name="T9">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#2E8B57</item>
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+    <style name="T10">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#FFFFFF</item>
+        <item name="TEN">#2E8B57</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+    <style name="T11">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#FFFFFF</item>
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#2E8B57</item>
+        <item name="TWELVE">#FFFFFF</item>
+    </style>
+    <style name="T12">
+        <item name="ONE">#FFFFFF</item>
+        <item name="TWO">#FFFFFF</item>
+        <item name="THREE">#FFFFFF</item>
+        <item name="FOUR">#FFFFFF</item>
+        <item name="FIVE">#FFFFFF</item>
+        <item name="SIX">#FFFFFF</item>
+        <item name="SEVEN">#FFFFFF</item>
+        <item name="EIGHT">#FFFFFF</item>
+        <item name="NINE">#FFFFFF</item>2
+        <item name="TEN">#FFFFFF</item>
+        <item name="ELEVEN">#FFFFFF</item>
+        <item name="TWELVE">#2E8B57</item>
+    </style>
 
 
 

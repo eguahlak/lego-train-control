@@ -4,5 +4,18 @@
         <attr name="bauble_round" format="color" />
         <attr name="bauble_small" format="color" />
         <attr name="bauble_square" format="color" />
+        <attr name="ONE" format="color" />
+        <attr name="TWO" format="color" />
+        <attr name="THREE" format="color" />
+        <attr name="FOUR" format="color" />
+        <attr name="FIVE" format="color" />
+        <attr name="SIX" format="color" />
+        <attr name="SEVEN" format="color" />
+        <attr name="EIGHT" format="color" />
+        <attr name="NINE" format="color" />
+        <attr name="TEN" format="color" />
+        <attr name="ELEVEN" format="color" />
+        <attr name="TWELVE" format="color" />
+
     </declare-styleable>
 </resources>

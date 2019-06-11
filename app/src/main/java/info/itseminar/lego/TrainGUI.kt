@@ -1,5 +1,6 @@
 package info.itseminar.lego
 
+import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.os.Bundle
 import android.support.annotation.StyleRes
@@ -13,6 +14,8 @@ import info.itseminar.lego.protocol.trainManager
 import kotlinx.android.synthetic.main.activity_traingui.*
 import info.itseminar.lego.protocol.Train
 import info.itseminar.lego.protocol.TrainServer
+import kotlinx.android.synthetic.main.fragment_information.*
+import kotlinx.android.synthetic.main.fragment_speed.*
 
 
 class TrainGui : AppCompatActivity() {
@@ -34,8 +37,8 @@ class TrainGui : AppCompatActivity() {
         is Command.TrainInformation -> {
           currentSpeedLabel.setText("${command.speed} km/h")
           speedometer.speedTo(command.speed.toFloat(), 1000)
-          distance_to_light.setText("Distance to next light: ${command.distanceToLight}")
-          track_id.setText("Train running on track: ${command.trackId}")
+          //distance_to_light.setText("Distance to next light: ${command.distanceToLight}")
+          //track_id.setText("Train running on track: ${command.trackId}")
           changeLight("${command.light}")
         }
         is Command.TrainList -> if (trainManager().train == null) showTrainListDialog(command.trains)
@@ -67,7 +70,7 @@ class TrainGui : AppCompatActivity() {
       currentSpeedLabel.setText("${targetspeed} km/h")
     }
   }
-  fun changeTheme(@StyleRes theme: Resources.Theme) {
+  fun changeTheme(@SuppressLint("SupportAnnotationUsage") @StyleRes theme: Resources.Theme) {
     val drawable = ResourcesCompat.getDrawable(resources, R.drawable.ic_traffic_light, theme)
     traffic.setImageDrawable(drawable)
   }
@@ -86,7 +89,7 @@ class TrainGui : AppCompatActivity() {
         setItems(trainTexts) { dialog, index ->
           val train = trainArray[index]
           if (train.driver.id == 0) connect(train)
-          driver_id_text.setText("You control train number: ${train.id}")
+          //driver_id_text.setText("You control train number: ${train.id}")
         }
         create().show()
       }

@@ -15,6 +15,9 @@ sealed class Command {
     const val NOT_CONNECTED = 101
     const val ALREADY_CONNECTED = 102
 
+    //Får input og returnerer en command. Det er disse commands som bliver brugt til at styre
+    //toget. Den bruger switchen til at bestemme hvilken command der skal køres.
+    //metoderne er defineret nedenunder denne metode
     fun from(input: InputStream): Command {
       val length = input.read()
       val commandKey = input.read()
@@ -113,6 +116,7 @@ sealed class Command {
     override fun toString() = "TRAIN_BRAKE"
   }
 
+  // en metode der skriver al information omkring toget, skinneId, fart, næste lys.
   class TrainInformation(val speed: Int, val trackId: Int, val distanceToLight: Int, val light: UByte) : Command() {
     override fun to(output: OutputStream) {
       output.write(15)
@@ -128,6 +132,7 @@ sealed class Command {
       "TRAIN_INFORMATION speed: $speed, track: #$trackId, distance: $distanceToLight with $light"
   }
 
+  //Bruges til at sætte farten på toget.
   class TrainControl(val speed: Int) : Command() {
     override fun to(output: OutputStream) {
       output.write(6)
@@ -139,6 +144,7 @@ sealed class Command {
     override fun toString() = "TRAIN_CONTROL speed: $speed"
   }
 
+  //bruges til at finde ud af hvor mange tog der er.
   class TrainList(val trains: Collection<Train>) : Command() {
     override fun to(output: OutputStream) {
       output.write(3 + 8*trains.size)

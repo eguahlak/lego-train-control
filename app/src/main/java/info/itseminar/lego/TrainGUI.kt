@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.ContextThemeWrapper
+import android.widget.Toast
 import info.itseminar.lego.protocol.Command
 import info.itseminar.lego.protocol.trainManager
 import kotlinx.android.synthetic.main.activity_traingui.*
@@ -22,21 +23,25 @@ class TrainGui : AppCompatActivity() {
 
   var targetspeed = 0
 
+  //sætter ui til activity_traingui og sætter min maks på speedometeret vi loader.
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_traingui)
     val host = intent.extras.getString("host").trim()
-    speedometer.setMinMaxSpeed(0F, 300F)
+    speedometer.setMinMaxSpeed(0F, 220F)
     speedometer.isWithTremble = false
 
     //val wrapper = ContextThemeWrapper(this, R.style.BBB)
     //changeTheme(wrapper.getTheme())
 
+    //trainManager forbinder og lytter til de commandoer der kommer ind. Det kan være alt fra at
+    // opdatere targetspeed til at skifte lyssignalets farver og sætte trackId
     trainManager().connectAndListen(TrainServer(host)) { command ->
       when (command) {
         is Command.TrainInformation -> {
-          currentSpeedLabel.setText("${targetspeed} km/h")
+          currentSpeedLabel.setText("${targetspeed}")
           speedometer.speedTo(command.speed.toFloat(), 1000)
+
           //distance_to_light.setText("Distance to next light: ${command.distanceToLight}")
           //track_id.setText("Train running on track: ${command.trackId}")
           changeLight("${command.light}")
@@ -52,23 +57,35 @@ class TrainGui : AppCompatActivity() {
 
 
     speedUpButton.setOnClickListener {
-      val increase = 50
-      targetspeed += increase
-      trainManager().send(Command.TrainControl(targetspeed))
-      currentSpeedLabel.setText("${targetspeed} km/h")
+      val increase = 10
+      if (targetspeed + increase >= 150) {
+        Toast.makeText(applicationContext, "Train has reached the limit - risk of crash", Toast.LENGTH_SHORT).show()
+
+      } else {
+        targetspeed += increase
+        trainManager().send(Command.TrainControl(targetspeed))
+        currentSpeedLabel.setText("${targetspeed}")
+      }
     }
     speedDownButton.setOnClickListener {
-      val decrease = 50
-      targetspeed -= decrease
+      val decrease = 10
+      if(targetspeed-decrease <=0){
+        Toast.makeText(applicationContext, "Train can only go forward", Toast.LENGTH_SHORT).show()
+
+      }
+      else{
+        targetspeed -= decrease
+      }
+
       trainManager().send(Command.TrainControl(targetspeed))
-      currentSpeedLabel.setText("${targetspeed} km/h")
+      currentSpeedLabel.setText("${targetspeed}")
     }
 
 
     stopButton.setOnClickListener {
       trainManager().send(Command.TrainBreak)
       targetspeed = 0
-      currentSpeedLabel.setText("${targetspeed} km/h")
+      currentSpeedLabel.setText("${targetspeed}")
     }
   }
   fun changeTheme(@SuppressLint("SupportAnnotationUsage") @StyleRes theme: Resources.Theme) {

@@ -35,7 +35,7 @@ class TrainGui : AppCompatActivity() {
     trainManager().connectAndListen(TrainServer(host)) { command ->
       when (command) {
         is Command.TrainInformation -> {
-          currentSpeedLabel.setText("${targetspeed} km/h")
+          //currentSpeedLabel.setText("${targetspeed} km/h")
           speedometer.speedTo(command.speed.toFloat(), 1000)
           //distance_to_light.setText("Distance to next light: ${command.distanceToLight}")
           //track_id.setText("Train running on track: ${command.trackId}")
@@ -52,13 +52,13 @@ class TrainGui : AppCompatActivity() {
 
 
     speedUpButton.setOnClickListener {
-      val increase = 50
+      val increase = 25
       targetspeed += increase
       trainManager().send(Command.TrainControl(targetspeed))
       currentSpeedLabel.setText("${targetspeed} km/h")
     }
     speedDownButton.setOnClickListener {
-      val decrease = 50
+      val decrease = 25
       targetspeed -= decrease
       trainManager().send(Command.TrainControl(targetspeed))
       currentSpeedLabel.setText("${targetspeed} km/h")
@@ -111,6 +111,7 @@ class TrainGui : AppCompatActivity() {
       "6" -> changeTheme(GGB.theme)
     }
   }
+
   fun trackNumber(trackId: String) {
     val ONE = ContextThemeWrapper(this, R.style.T1)
     val TWO = ContextThemeWrapper(this, R.style.T2)

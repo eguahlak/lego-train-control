@@ -49,7 +49,7 @@ class DatagramTrainManager() : TrainManager {
       for (command in commands) {
         try {
           Log.d("TRAIN", "Sending $command")
-          val output = ByteArrayOutputStream(255)
+          val output = ByteArrayOutputStream(256)
           command.to(output)
           val buffer = output.toByteArray()
           val datagram = DatagramPacket(buffer, buffer.size, InetAddress.getByName(server.host), server.port)

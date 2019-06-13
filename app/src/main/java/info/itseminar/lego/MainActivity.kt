@@ -10,6 +10,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val username = intent.extras.getString("username").trim()
+        textView2.setText("Hello ${username} Click Start!")
         imageButton.setOnClickListener {
             val host = host_input.text.toString()
             val intent = Intent(this, TrainGui::class.java)

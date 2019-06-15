@@ -37,13 +37,11 @@ class TrainGui : AppCompatActivity() {
     //trainManager forbinder og lytter til de commandoer der kommer ind. Det kan være alt fra at
     // opdatere targetspeed til at skifte lyssignalets farver og sætte trackId
     trainManager().connectAndListen(TrainServer(host)) { command ->
+      //Callback funktion bliver kørt efter progressUpdate
       when (command) {
         is Command.TrainInformation -> {
           currentSpeedLabel.setText("${targetspeed}")
           speedometer.speedTo(command.speed.toFloat(), 1000)
-
-          //distance_to_light.setText("Distance to next light: ${command.distanceToLight}")
-          //track_id.setText("Train running on track: ${command.trackId}")
           changeLight("${command.light}")
           trackNumber("${command.trackId}")
         }
@@ -88,6 +86,8 @@ class TrainGui : AppCompatActivity() {
       currentSpeedLabel.setText("${targetspeed}")
     }
   }
+
+  //the 2 change functions is responsible of changing the drawables to the traficlight and the track respectively
   fun changeTheme(@SuppressLint("SupportAnnotationUsage") @StyleRes theme: Resources.Theme) {
     val drawable = ResourcesCompat.getDrawable(resources, R.drawable.ic_traffic_light, theme)
     traffic.setImageDrawable(drawable)
@@ -118,6 +118,8 @@ class TrainGui : AppCompatActivity() {
     }
   }
 
+
+//this  functions is setting the right theme coreponding to the input from the traficlight information recived from the train the different themes is defined int the styles file
   fun changeLight(light: String) {
     val BBR = ContextThemeWrapper(this, R.style.BBR)
     val BGR = ContextThemeWrapper(this, R.style.BGR)
@@ -128,6 +130,8 @@ class TrainGui : AppCompatActivity() {
       "6" -> changeTheme(GGB.theme)
     }
   }
+
+  //this  functions is setting the right theme coreponding to the input from the track information recived from the train the different themes is defined int the styles file
   fun trackNumber(trackId: String) {
     val ONE = ContextThemeWrapper(this, R.style.T1)
     val TWO = ContextThemeWrapper(this, R.style.T2)

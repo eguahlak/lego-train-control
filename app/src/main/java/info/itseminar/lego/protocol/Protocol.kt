@@ -15,9 +15,8 @@ sealed class Command {
     const val NOT_CONNECTED = 101
     const val ALREADY_CONNECTED = 102
 
-    //Får input og returnerer en command. Det er disse commands som bliver brugt til at styre
-    //toget. Den bruger switchen til at bestemme hvilken command der skal køres.
-    //metoderne er defineret nedenunder denne metode
+    //The function "from" is called upon from the DatagramTrainManager
+    //according to the input it recives from the server(train) it will return a command from that
     fun from(input: InputStream): Command {
       val length = input.read()
       val commandKey = input.read()

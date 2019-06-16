@@ -26,15 +26,15 @@
         <item name="bauble_small">#2E8B57</item>
         <item name="bauble_square">#f22424</item>
     </style>
-    <style name="GGB">
+    <style name="GRG">
         <item name="bauble_round">#2E8B57</item>
-        <item name="bauble_small">#2E8B57</item>
-        <item name="bauble_square">#000000</item>
+        <item name="bauble_small">#f22424</item>
+        <item name="bauble_square">#2E8B57</item>
     </style>
-    <style name="GBR">
-        <item name="bauble_round">#2E8B57</item>
-        <item name="bauble_small">#000000</item>
-        <item name="bauble_square">#f22424</item>
+    <style name="RGG">
+        <item name="bauble_round">#f22424</item>
+        <item name="bauble_small">#2E8B57</item>
+        <item name="bauble_square">#2E8B57</item>
     </style>
     <style name="BGR">
         <item name="bauble_round">#000000</item>

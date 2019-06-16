@@ -121,13 +121,13 @@ class TrainGui : AppCompatActivity() {
 
 //this  functions is setting the right theme coreponding to the input from the traficlight information recived from the train the different themes is defined int the styles file
   fun changeLight(light: String) {
-    val BBR = ContextThemeWrapper(this, R.style.BBR)
-    val BGR = ContextThemeWrapper(this, R.style.BGR)
-    val GGB = ContextThemeWrapper(this, R.style.GGB)
+    val GGR = ContextThemeWrapper(this, R.style.GGR)
+    val GRG = ContextThemeWrapper(this, R.style.GRG)
+    val RGG = ContextThemeWrapper(this, R.style.RGG)
     when(light){
-      "1" -> changeTheme(BBR.theme)
-      "3" -> changeTheme(BGR.theme)
-      "6" -> changeTheme(GGB.theme)
+      "1" -> changeTheme(GRG.theme)
+      "3" -> changeTheme(RGG.theme)
+      "6" -> changeTheme(GGR.theme)
     }
   }
 

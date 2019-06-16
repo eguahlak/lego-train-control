@@ -4,6 +4,6 @@ import android.app.Application
 
 
 class TrainApplication() : Application() {
-  var trainManager: TrainManager = SocketTrainManager()
-  //var trainManager: TrainManager = DatagramTrainManager()
+  //var trainManager: TrainManager = SocketTrainManager()
+  var trainManager: TrainManager = DatagramTrainManager()
   }
